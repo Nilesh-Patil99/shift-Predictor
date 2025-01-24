@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+
+    <title>Shift Predictor</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: black;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #578E7E;
+        }
+        h1 {
+            text-align: center;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Shift Predictor</h1>
+        
+        <label for="shiftSequence">Shift Sequence:</label>
+        <select id="shiftSequence">
+            <option value="1">1. Night, Evening, Morning</option>
+            <option value="2">2. Night, Morning, Evening</option>
+        </select>
+
+        <label for="currentShift">Current Shift:</label>
+        <select id="currentShift">
+            <option value="night">Night</option>
+            <option value="evening">Evening</option>
+            <option value="morning">Morning</option>
+        </select>
+
+        <label for="weekOff">Weekly Off Day:</label>
+        <select id="weekOff">
+            <option value="0">Sunday</option>
+            <option value="1">Monday</option>
+            <option value="2">Tuesday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+            <option value="6">Saturday</option>
+        </select>
+
+        <label for="dateInput" style="cursor: pointer;">Date for Shift Prediction:</label>
+        <input type="date" id="dateInput" min="">
+
+        <button onclick="predictShift()">Predict Shift</button>
+
+        <div class="result" id="result"></div>
+        <div style="display: flex; justify-content: center;" ><p>Made by Nilesh with &#x2665;&#xfe0f;</p></div>
+
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
